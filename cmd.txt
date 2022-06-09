@@ -23,3 +23,48 @@ pnpm version-packages
 # 2-4 发包
 pnpm release
 # 2-5 得到 1.0.0-beta.2
+
+
+echo "# imohuan-plus" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/imohuan/imohuan-plus.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/imohuan/imohuan-plus.git
+git branch -M main
+git push -u origin main
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+
+What kind of change is this for @imohuan/cli? (current version is undefined) · major
+🦋  error TypeError: Invalid Version: undefined
+    对于@imohuan/cli来说，这是什么样的变化?(当前版本未定义)·专业
+    🦋错误类型错误:无效版本:未定义
+
+Please enter a summary for this change (this will be in the changelogs).
+🦋    (submit empty line to open external editor)
+🦋  Summary »  
+    请输入此更改的摘要(将在变更日志中)。
+    🦋(提交空行打开外部编辑器)
+    »🦋总结
+
+Is this your desired changeset? (Y/n) » true
+  这是您想要的变更集吗?(Y / n)»真的
+  Changeset added! - you can now commit it
+    变更集添加!-你现在可以提交了
+
+🦋  warn This Changeset includes a major change and we STRONGLY recommend adding more information to the changeset:
+🦋  warn WHAT the breaking change is
+🦋  warn WHY the change was made
+🦋  warn HOW a consumer should update their code
+🦋  info G:\Project\imohuan\.changeset\fair-planes-retire.md
+  🦋warn此变更集包含一个重大变更，我们强烈建议向变更集添加更多信息:
+  🦋warn中断的更改是什么
+  🦋warn为什么发生更改
+  🦋警告消费者应该如何更新他们的代码
+  项目🦋信息G: \ \ imohuan \ .changeset \ fair-planes-retire.md
