@@ -1,9 +1,9 @@
 {
-  "name": "@imohuan/cli",
+  "name": "@imohuan/core",
   "private": false,
   "license": "MIT",
   "main": "index.ts",
-  "version": "4.0.0",
+  "version": "3.0.0",
   "scripts": {
     "dev": "esno index.ts"
   },

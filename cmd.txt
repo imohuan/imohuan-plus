@@ -1,3 +1,8 @@
+1. 发布 pnpm publish -r
+2. 多package包安装 pnpm i
+
+
+
 pnpm i -w 
 pnpm i xxx --filter @imohuan/cli
 pnpm run -C packages\cli dev
@@ -68,3 +73,15 @@ Is this your desired changeset? (Y/n) » true
   🦋warn为什么发生更改
   🦋警告消费者应该如何更新他们的代码
   项目🦋信息G: \ \ imohuan \ .changeset \ fair-planes-retire.md
+
+
+🦋  Which packages would you like to include? ... 
+√ changed packages
+  √ @imohuan/cli
+√ unchanged packages
+  √ @imohuan/core
+            🦋您想包含哪些包?…
+            √改变包
+            √ @imohuan/cli
+            √不变包
+            √ @imohuan/core
