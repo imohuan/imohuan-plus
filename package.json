@@ -9,7 +9,7 @@
     "version-packages": "changeset version",
     "release": "pnpm release:only",
     "release:only": "changeset publish --registry=https://registry.npmjs.com/",
-    "commit": "git add . && git commit -m 'hello' && git push",
+    "commit": "git add . && git commit -m 'hello' && git push && pnpm changeset && pnpm version-packages && pnpm release",
     "publish:custom": "pnpm publish --filter @imohuan/cli"
   },
   "keywords": [],
