@@ -1,0 +1,25 @@
+pnpm i -w 
+pnpm i xxx --filter @imohuan/cli
+pnpm run -C packages\cli dev
+
+
+上传
+https://juejin.cn/post/7098609682519949325#heading-8
+
+# 1-1 进行了一些开发...
+# 1-2 提交变更集
+pnpm changeset
+# 1-3 提升版本
+pnpm version-packages
+# 1-4 发包
+pnpm release # pnpm build && pnpm changeset publish --registry=...
+# 1-5 得到 1.0.0-beta.1
+
+# 2-1 进行了一些开发...
+# 2-2 提交变更集
+pnpm changeset
+# 2-3 提升版本
+pnpm version-packages
+# 2-4 发包
+pnpm release
+# 2-5 得到 1.0.0-beta.2

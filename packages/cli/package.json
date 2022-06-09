@@ -1,0 +1,12 @@
+{
+  "name": "@imohuan/cli",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "esno index.ts"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}
