@@ -1,7 +1,7 @@
 pnpm i -w 
 pnpm i xxx --filter @imohuan/cli
 pnpm run -C packages\cli dev
-
+pnpm -r 包批量执行
 
 上传
 https://juejin.cn/post/7098609682519949325#heading-8
