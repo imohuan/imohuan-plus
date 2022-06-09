@@ -1,2 +1,2 @@
 import chalk from "chalk";
-console.log(chalk.green.bold("Hello World"));
+console.log(chalk.green.bold("Hello"));
