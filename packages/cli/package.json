@@ -2,12 +2,24 @@
   "name": "@imohuan/cli",
   "private": false,
   "license": "MIT",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "version": "4.0.0",
   "scripts": {
-    "dev": "esno index.ts"
+    "dev": "esno src/index.ts"
   },
-  "dependencies": {
-    "chalk": "^5.0.1"
+  "devDependencies": {
+    "@imohuan/utils": "workspace: *",
+    "@types/figlet": "^1.5.4",
+    "@types/root-check": "^1.0.0",
+    "@types/semver": "^7.3.9",
+    "@types/user-home": "^2.0.0",
+    "commander": "^9.3.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4",
+    "latest-version": "^6.0.0",
+    "ora": "^6.1.0",
+    "root-check": "^2.0.0",
+    "semver": "^7.3.7",
+    "user-home": "^3.0.0"
   }
 }

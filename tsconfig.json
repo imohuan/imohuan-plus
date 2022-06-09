@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
+    "module": "commonjs",
     "lib": ["ES2018", "DOM", "ESNext", "DOM.Iterable"],
-    "importHelpers": true,
+    "importHelpers": false,
     "declaration": true,
     "sourceMap": true,
     "rootDir": "./",
@@ -15,6 +15,7 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
