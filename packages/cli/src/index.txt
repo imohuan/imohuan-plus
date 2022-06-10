@@ -1,0 +1,4 @@
+node .\packages\cli\bin\imohuan-cli.js
+esno .\packages\cli\bin\test.ts
+
+pnpm -r build

@@ -1,0 +1,8 @@
+1. pnpm workspace 安装 inquirer 后使用报错
+    报错提示： chalk.blue is no function
+
+2. vite 打包 js 文件, 无法将一些es库打包到.js中
+    如果不使用external去除, 打包的时候会直接报错
+    如果使用external去除，最后使用node执行会报无法调用es module
+      require() of ES modules is not supported
+

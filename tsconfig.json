@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "CommonJS",
     "lib": ["ES2018", "DOM", "ESNext", "DOM.Iterable"],
     "importHelpers": false,
     "declaration": true,

@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import { Chalk } from "chalk";
 import { program } from "commander";
 import { promisify } from "util";
 
@@ -8,6 +8,7 @@ import pkg from "../../package.json";
 import { commandLog } from "../commands/log";
 import { Ctx } from "./context";
 
+const chalk = new Chalk();
 const figlet: any = promisify(require("figlet"));
 
 // https://juejin.cn/post/7106007795123617799

@@ -3,7 +3,7 @@
   "private": false,
   "license": "MIT",
   "main": "src/index.ts",
-  "version": "4.0.1",
+  "version": "0.0.0",
   "scripts": {
     "dev": "esno src/index.ts"
   },

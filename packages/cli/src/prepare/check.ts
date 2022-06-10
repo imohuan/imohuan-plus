@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import { Chalk } from "chalk";
 import { existsSync } from "fs-extra";
 import rootCheck from "root-check";
 import semver from "semver";
@@ -8,6 +8,8 @@ import latestVersion from "latest-version";
 import pkg from "../../package.json";
 import { LOWEST_NODE_VERSION } from "../core/const";
 import { Ctx } from "../core/context";
+
+const chalk = new Chalk();
 
 /** 检查Cli版本 */
 export function checkPkgVersion(ctx: Ctx) {

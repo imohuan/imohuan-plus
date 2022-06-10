@@ -6,7 +6,7 @@ import { checkNodeVersion, checkRoot, checkUpdate, checkUserHome } from "./prepa
 
 const ctx = new Ctx("Imohuan Cli", resolve(process.cwd(), "dist"));
 
-async function main() {
+export async function main() {
   try {
     checkRoot(ctx);
     checkUpdate(ctx);
@@ -17,4 +17,3 @@ async function main() {
     ctx.logger.error(e.message);
   }
 }
-main();
