@@ -19,5 +19,13 @@
   "": "",
   "create-name": "create project name",
   "version": "Version",
-  "required-argument": "missing required argument"
+  "required-argument": "missing required argument",
+  "log-clear": "clear all logs",
+  "log-list": "logs list",
+  "log-look": "see the log",
+  "log-look-path": "Viewing target logs",
+  "log-clear-success": "clearing logs succeeded",
+  "log-clear-error": "failed to clear logs",
+  "log-empty": "currently, there are no logs",
+  "create-list": "list of created templates"
 }

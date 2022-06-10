@@ -14,10 +14,4 @@ export function initCommand(program: Command) {
   // program.helpOption(false);
   // 关闭子 命令中的help
   program.addHelpCommand(false);
-
-  "create error errors:create error:create".split(" ").forEach((key) => {
-    program.on(key, function () {
-      console.log(22222222);
-    });
-  });
 }

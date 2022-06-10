@@ -5,10 +5,9 @@ import { Ctx } from "./core/context";
 import { checkNodeVersion, checkRoot, checkUpdate, checkUserHome } from "./prepare/check";
 import { initLocalesData } from "./locales/init";
 
-const ctx = new Ctx("Imohuan Cli", resolve(process.cwd(), "dist"));
+const ctx = Ctx.getInstance();
 
 initLocalesData();
-
 export async function main() {
   try {
     checkRoot(ctx);

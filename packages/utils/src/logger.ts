@@ -3,6 +3,7 @@ import "winston-daily-rotate-file";
 import chalk from "chalk";
 import { get, isArray, isObject, upperFirst } from "lodash-es";
 import moment from "moment";
+import stripAnsi from "strip-ansi";
 import { createLogger, format, transports } from "winston";
 
 export type { Logger } from "winston";
@@ -32,7 +33,6 @@ const createRotateFile = (level: string, dirname: string) => {
 };
 
 export const formatLog = (args: { label: string; level: string; message: string }) => {
-  // ${chalk.bold.gray(moment().format("YYYY-MM-DD hh:ss:mm"))}
   return `${chalk.gray.bold("$")} ${chalk.bold.blue(`[${args.label}]`)} ${levelColor[
     args.level
   ].bold(`[${upperFirst(args.level)}]`)}: ${args.message}`;
@@ -67,7 +67,7 @@ const Console = (labelName: string) => {
     format: combine(
       label({ label: labelName }),
       timestamp(),
-      printf((args: any) => formatLog(args))
+      printf((args: any) => chalk.white.bold(formatLog(args)))
     )
   } as any);
 };
@@ -81,10 +81,8 @@ export const logger = (labelName: string, dirname: string) => {
       label({ label: labelName }),
       timestamp(),
       printf((args: any) => {
-        const result = `$ ${moment().format("YYYY-MM-DD hh:ss:mm")} [${args.label}] [${upperFirst(
-          args.level
-        )}]: ${args.message}`;
-        return result;
+        const text = stripAnsi(formatLog(args)).slice(2);
+        return `$ ${moment().format("YYYY-MM-DD hh:ss:mm")} ${text}`;
       })
     ),
     transports: [

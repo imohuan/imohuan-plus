@@ -17,6 +17,10 @@ export class Ctx {
   dirname: string;
   logger: Logger;
 
+  static getInstance() {
+    return new Ctx("Imohuan Cli", resolve(process.cwd(), "dist"));
+  }
+
   constructor(name: string, dirname: string) {
     this.name = name;
     this.dirname = dirname;

@@ -11,6 +11,7 @@ export function commandLanguage(program: Command) {
 
   language
     .command("list")
+    .alias("ls")
     .description(get("language-list"))
     .action(() => {
       ctx.logger.info(
