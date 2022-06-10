@@ -1,0 +1,23 @@
+{
+  "usage": "🛷 Usage",
+  "args": "🛠️  Arguments",
+  "options": "🪁 Options",
+  "commands": "🐳 Commands",
+  "help": "display help for commands",
+  "command-help": "open help",
+  "command-version": "look version",
+  "command-create": "create template",
+  "command-log": "get logs",
+  "command-language": "change language",
+  "language-list": "get the supported language",
+  "set-locals-error": "parser i18n template error",
+  "support-language": "supported languages",
+  "not-found": "not found instruction",
+  "use-language": "use language",
+  "current-language": "current language",
+  "select-language": "select language",
+  "": "",
+  "create-name": "create project name",
+  "version": "Version",
+  "required-argument": "missing required argument"
+}

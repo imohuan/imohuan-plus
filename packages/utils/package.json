@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/winston": "^2.4.4",
+    "lowdb": "^3.0.0",
     "winston": "^3.7.2",
     "winston-daily-rotate-file": "^4.7.1"
   }

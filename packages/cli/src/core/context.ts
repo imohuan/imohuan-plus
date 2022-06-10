@@ -1,19 +1,29 @@
 import { logger, Logger } from "@imohuan/utils";
 import { set, get } from "lodash-es";
 import { resolve } from "path";
+import { Store } from "@imohuan/utils";
 
 export type Global = {
   ctx: Ctx;
 };
 
+export type LocalStore = {
+  language: "en" | "zh";
+};
+
 export class Ctx {
   name: string;
+  store: Store<LocalStore>;
   dirname: string;
   logger: Logger;
 
   constructor(name: string, dirname: string) {
     this.name = name;
     this.dirname = dirname;
+    this.store = new Store<LocalStore>(resolve(dirname, "config.json"), {
+      language: "zh"
+    });
+
     this.logger = logger(name, resolve(dirname, "log"));
     this.set("ctx", this);
   }

@@ -3,8 +3,11 @@ import { resolve } from "path";
 import { registerCommand } from "./core/commander";
 import { Ctx } from "./core/context";
 import { checkNodeVersion, checkRoot, checkUpdate, checkUserHome } from "./prepare/check";
+import { initLocalesData } from "./locales/init";
 
 const ctx = new Ctx("Imohuan Cli", resolve(process.cwd(), "dist"));
+
+initLocalesData();
 
 export async function main() {
   try {

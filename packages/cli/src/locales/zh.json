@@ -1,0 +1,23 @@
+{
+  "usage": "🛷 使用",
+  "args": "🛠️  参数",
+  "options": "🪁 配置",
+  "commands": "🐳 指令",
+  "help": "显示命令帮助",
+  "command-help": "指令帮助",
+  "command-version": "查看版本",
+  "command-create": "创建模板",
+  "command-log": "获取日志",
+  "command-language": "更改语言",
+  "language-list": "获取支持的语言",
+  "set-locals-error": "解析国家化失败",
+  "support-language": "支持的语言",
+  "not-found": "没找找到对应的指令",
+  "use-language": "使用语言",
+  "current-language": "当前语言",
+  "select-language": "选择语言",
+  "create-name": "创建项目名称",
+  "version": "版本号",
+  "": "",
+  "required-argument": "缺少所需的参数"
+}

@@ -42,9 +42,11 @@ export function checkUserHome(_ctx: Ctx) {
 
 /** 检测最新版本 */
 export async function checkUpdate(ctx: Ctx) {
-  const version = await latestVersion(pkg.name);
-  if (semver.lt(pkg.version, version)) {
-    ctx.logger.warn("检查到最新版本: ", chalk.green.bold(version));
-    ctx.logger.warn("请执行", chalk.green.bold(`npm i ${pkg.name}@${version} -g`), "进行更新");
-  }
+  try {
+    const version = await latestVersion(pkg.name);
+    if (semver.lt(pkg.version, version)) {
+      ctx.logger.warn("检查到最新版本: ", chalk.green.bold(version));
+      ctx.logger.warn("请执行", chalk.green.bold(`npm i ${pkg.name}@${version} -g`), "进行更新");
+    }
+  } catch {}
 }

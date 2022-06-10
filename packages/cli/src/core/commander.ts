@@ -1,44 +1,37 @@
-import { Chalk } from "chalk";
+import chalk from "chalk";
 import { program } from "commander";
-import { promisify } from "util";
 
 import { formatLog } from "@imohuan/utils";
 
 import pkg from "../../package.json";
+import { commandCreate } from "../commands/create";
+import { commandLanguage } from "../commands/language";
 import { commandLog } from "../commands/log";
+import { initHelp } from "../helper/formatHelp";
+import { get, i18n, initI18n } from "../helper/i18n";
 import { Ctx } from "./context";
-
-const chalk = new Chalk();
-const figlet: any = promisify(require("figlet"));
+import { initCommand } from "../helper/command";
+import { initOutput } from "../helper/formatOutput";
 
 // https://juejin.cn/post/7106007795123617799
 export function registerCommand(ctx: Ctx) {
-  const title = chalk.green.bold(
-    figlet.textSync(ctx.name, {
-      horizontalLayout: "Isometric1",
-      verticalLayout: "default",
-      width: 300,
-      whitespaceBreak: true
-    })
-  );
+  initI18n();
+  initHelp(program, {});
+  i18n.setLocale(ctx.store.get("language", "zh"));
 
-  program
-    .name(`\n${title}\n`)
-    .usage(chalk.gray.bold(`${ctx.name.replaceAll(" ", "-")} [global options] command`));
-
+  program.name(ctx.name.replaceAll(" ", "-").toLocaleLowerCase()).usage("[command] [options]");
+  program.helpOption("-h, --help", get("command-help"));
   program.version(
-    formatLog({ level: "info", label: ctx.name, message: "版本号: " + pkg.version }),
+    formatLog({ level: "info", label: ctx.name, message: `${get("version")}: ${pkg.version}` }),
     "-v, --version",
-    "查看cli版本"
+    get("command-version")
   );
 
-  program.arguments("[cmd] [options]").action((cmd, options) => {
-    if (!cmd) return program.outputHelp();
-    ctx.logger.error(`未找到命令: ${chalk.yellow.bold(cmd)}`);
-  });
-
+  initOutput(program);
+  initCommand(program);
+  commandLanguage(program);
+  commandCreate(program);
   commandLog(program);
 
   program.parse();
-  // const options = program.opts();
 }

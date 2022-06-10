@@ -13,10 +13,13 @@
   },
   "devDependencies": {
     "@imohuan/utils": "workspace:*",
+    "@types/i18n": "^0.13.3",
     "@types/figlet": "^1.5.4",
-    "@types/root-check": "^1.0.0",
     "@types/semver": "^7.3.9",
+    "@types/inquirer": "^8.2.1",
     "@types/user-home": "^2.0.0",
+    "@types/commander": "^2.12.2",
+    "@types/root-check": "^1.0.0",
     "commander": "^9.3.0",
     "figlet": "^1.5.2",
     "gitly": "^2.2.0",
@@ -26,6 +29,8 @@
     "ora": "^6.1.0",
     "root-check": "^2.0.0",
     "semver": "^7.3.7",
+    "download-git-repo": "^3.0.2",
+    "i18n": "^0.15.0",
     "user-home": "^3.0.0"
   }
 }
