@@ -1,23 +1,18 @@
 import { resolve } from "path";
 
+import { registerCommand } from "./core/commander";
 import { Ctx } from "./core/context";
-import {
-  checkNodeVersion,
-  checkPkgVersion,
-  checkRoot,
-  checkUpdate,
-  checkUserHome
-} from "./prepare/check";
+import { checkNodeVersion, checkRoot, checkUpdate, checkUserHome } from "./prepare/check";
 
-const ctx = new Ctx("Imohuan Cli", resolve(process.cwd(), "dist", "log"));
+const ctx = new Ctx("Imohuan Cli", resolve(process.cwd(), "dist"));
 
 async function main() {
   try {
-    checkUpdate();
-    checkUserHome();
     checkRoot(ctx);
-    checkPkgVersion(ctx);
+    checkUpdate(ctx);
+    checkUserHome(ctx);
     checkNodeVersion(ctx);
+    registerCommand(ctx);
   } catch (e: any) {
     ctx.logger.error(e.message);
   }

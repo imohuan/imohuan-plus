@@ -32,14 +32,17 @@ export function checkRoot(_ctx: Ctx) {
 }
 
 /** 检查用户主目录 */
-export function checkUserHome() {
+export function checkUserHome(_ctx: Ctx) {
   if (!userHome || !existsSync(userHome)) {
     throw new Error(chalk.red("当前登录用户主目录不存在"));
   }
 }
 
 /** 检测最新版本 */
-export async function checkUpdate() {
+export async function checkUpdate(ctx: Ctx) {
   const version = await latestVersion(pkg.name);
-  console.log("version", version);
+  if (semver.lt(pkg.version, version)) {
+    ctx.logger.warn("检查到最新版本: ", chalk.green.bold(version));
+    ctx.logger.warn("请执行", chalk.green.bold(`npm i ${pkg.name}@${version} -g`), "进行更新");
+  }
 }

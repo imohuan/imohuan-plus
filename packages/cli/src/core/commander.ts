@@ -2,13 +2,18 @@ import chalk from "chalk";
 import { program } from "commander";
 import { promisify } from "util";
 
+import { formatLog } from "@imohuan/utils";
+
+import pkg from "../../package.json";
+import { commandLog } from "../commands/log";
 import { Ctx } from "./context";
 
 const figlet: any = promisify(require("figlet"));
 
-export function main(ctx: Ctx) {
+// https://juejin.cn/post/7106007795123617799
+export function registerCommand(ctx: Ctx) {
   const title = chalk.green.bold(
-    figlet.textSync(name, {
+    figlet.textSync(ctx.name, {
       horizontalLayout: "Isometric1",
       verticalLayout: "default",
       width: 300,
@@ -16,40 +21,23 @@ export function main(ctx: Ctx) {
     })
   );
 
-  program.name(`\n${title}\n`).description("CL I to some JavaScript string utilities");
-  program.version("0.0.1", "-v, --version");
-
-  // program.option("--first");
-  // program.option("-s, --separator <char>");
-
   program
-    .command("split")
-    .description("Split a string into substrings and display as an array")
-    .argument("<string>", "string to split")
-    .option("--first", "display just the first substring")
-    .option("-s, --separator <char>", "separator character", ",")
-    .action((str, options) => {
-      const limit = options.first ? 1 : undefined;
-      console.log(str.split(options.separator, limit));
-    });
+    .name(`\n${title}\n`)
+    .usage(chalk.gray.bold(`${ctx.name.replaceAll(" ", "-")} [global options] command`));
 
-  program.command("duplicate").summary("make a copy")
-    .description(`Make a copy of the current project.
-  This may require additional disk space.
-    `);
+  program.version(
+    formatLog({ level: "info", label: ctx.name, message: "版本号: " + pkg.version }),
+    "-v, --version",
+    "查看cli版本"
+  );
+
+  program.arguments("[cmd] [options]").action((cmd, options) => {
+    if (!cmd) return program.outputHelp();
+    ctx.logger.error(`未找到命令: ${chalk.yellow.bold(cmd)}`);
+  });
+
+  commandLog(program);
 
   program.parse();
-  const options = program.opts();
-  // const limit = options.first ? 1 : undefined;
-  // console.log(program.args, options, program.args[0].split(options.separator, 1));
-
-  // program.outputHelp({ error: false });
-  // const msg = program.helpInformation();
-  // console.log("11msg", msg);
-  // console.log(options);
-
-  // program.on("help", () => {});
-
-  // const h = program.createHelp();
-  // console.log("h", h);
+  // const options = program.opts();
 }

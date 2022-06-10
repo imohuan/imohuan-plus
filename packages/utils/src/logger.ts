@@ -31,6 +31,13 @@ const createRotateFile = (level: string, dirname: string) => {
   return transport;
 };
 
+export const formatLog = (args: { label: string; level: string; message: string }) => {
+  // ${chalk.bold.gray(moment().format("YYYY-MM-DD hh:ss:mm"))}
+  return `${chalk.gray.bold("$")} ${chalk.bold.blue(`[${args.label}]`)} ${levelColor[
+    args.level
+  ].bold(`[${upperFirst(args.level)}]`)}: ${args.message}`;
+};
+
 const custom = {
   transform(info: any) {
     try {
@@ -60,12 +67,7 @@ const Console = (labelName: string) => {
     format: combine(
       label({ label: labelName }),
       timestamp(),
-      printf((args: any) => {
-        // ${chalk.bold.gray(moment().format("YYYY-MM-DD hh:ss:mm"))}
-        return `${chalk.gray.bold("$")} ${chalk.bold.blue(`[${args.label}]`)} ${levelColor[
-          args.level
-        ].bold(`[${upperFirst(args.level)}]`)}: ${args.message}`;
-      })
+      printf((args: any) => formatLog(args))
     )
   } as any);
 };
@@ -79,9 +81,9 @@ export const logger = (labelName: string, dirname: string) => {
       label({ label: labelName }),
       timestamp(),
       printf((args: any) => {
-        const result = `$ ${moment().format("YYYY-MM-DD hh:ss:mm")} [${upperFirst(args.level)}] [${
+        const result = `$ ${moment().format("YYYY-MM-DD hh:ss:mm")} [${args.label}] [${upperFirst(
           args.level
-        }]: ${args.message}`;
+        )}]: ${args.message}`;
         return result;
       })
     ),

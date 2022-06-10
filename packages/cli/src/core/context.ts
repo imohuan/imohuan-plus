@@ -1,5 +1,6 @@
 import { logger, Logger } from "@imohuan/utils";
 import { set, get } from "lodash-es";
+import { resolve } from "path";
 
 export type Global = {
   ctx: Ctx;
@@ -7,11 +8,13 @@ export type Global = {
 
 export class Ctx {
   name: string;
+  dirname: string;
   logger: Logger;
 
   constructor(name: string, dirname: string) {
     this.name = name;
-    this.logger = logger(name, dirname);
+    this.dirname = dirname;
+    this.logger = logger(name, resolve(dirname, "log"));
     this.set("ctx", this);
   }
 

@@ -1,5 +1,11 @@
 # @imohuan/cli
 
+## 4.0.1
+
+### Patch Changes
+
+- 更新一些内容
+
 ## 4.0.0
 
 ### Major Changes

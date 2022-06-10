@@ -2,10 +2,10 @@
   "name": "@imohuan/utils",
   "private": false,
   "license": "MIT",
-  "main": "index.ts",
-  "version": "4.0.0",
+  "main": "src/index.ts",
+  "version": "4.0.1",
   "scripts": {
-    "dev": "esno index.ts"
+    "dev": "esno src/index.ts"
   },
   "devDependencies": {
     "@types/winston": "^2.4.4",
