@@ -1,7 +1,8 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["ES2018", "DOM", "ESNext", "DOM.Iterable"],
     "importHelpers": false,
     "declaration": true,
@@ -28,5 +29,10 @@
     "esModuleInterop": true
   },
   "include": ["packages", "typings"],
-  "exclude": ["node_modules", "**/dist", "**/__tests__/**/*", "**/test/**", "**/tests/**"]
+  "exclude": ["node_modules", "**/dist", "**/__tests__/**/*", "**/test/**", "**/tests/**"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }

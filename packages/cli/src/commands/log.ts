@@ -1,7 +1,10 @@
 import chalk from "chalk";
 import { Command } from "commander";
 import { readdirSync, readFileSync, writeFileSync } from "fs-extra";
+import inquirer from "inquirer";
 import { resolve } from "path";
+
+import { copy } from "@imohuan/utils";
 
 import { getCtx } from "../core/context";
 import { initCommand } from "../helper/command";
@@ -22,23 +25,90 @@ export function commandLog(program: Command) {
       });
   };
 
+  const readLog = async (path: string) => {
+    let contents = readFileSync(path).toString().split("\n");
+    console.log("contents", contents);
+    while (true) {
+      const { value } = await inquirer.prompt([
+        {
+          type: "input",
+          message: "",
+          name: "value"
+        }
+      ]);
+      console.log("value", value);
+    }
+  };
+
   log
     .command("list")
     .alias("ls")
     .description(get("log-list"))
     .action(async () => {
       const logs = getLogs();
-      const msg = logs.length === 0 ? get("log-empty") : JSON.stringify(logs, null, 2);
-      ctx.logger.info(msg);
+      const { path, types } = await inquirer.prompt([
+        {
+          type: "list",
+          message: get("select-log"),
+          name: "path",
+          choices: logs
+        },
+        {
+          type: "list",
+          message: "选择方式",
+          name: "types",
+          choices: ["命令行阅读", "复制地址", "打印地址"]
+        }
+      ]);
+
+      switch (types) {
+        case "复制地址":
+          const result = await copy(path);
+          if (result.status) ctx.logger.info(get("copy-success"));
+          else ctx.logger.error(get("copy-error"));
+          break;
+        case "命令行阅读":
+          // await readLog(path);
+          const { value } = await inquirer.prompt([
+            {
+              type: "input",
+              message: "111",
+              name: "value"
+            },
+            {
+              type: "input",
+              message: "222",
+              name: "value"
+            },
+            {
+              type: "input",
+              message: "333",
+              name: "value"
+            }
+          ]);
+          console.log("value", value);
+          break;
+        case "打印地址":
+          ctx.logger.info(path);
+          break;
+      }
     });
 
   log
     .command("look")
     .argument("[path]", get("log-look-path"))
     .description(get("log-look"))
-    .action(() => {
-      // todo 未解决(git issus), 无法使用命令行交互
+    .action(async () => {
       const logs = getLogs();
+      const { path } = await inquirer.prompt([
+        {
+          type: "list",
+          message: get("select-log"),
+          name: "path",
+          choices: logs
+        }
+      ]);
+      //
       // 交互选中 log
       // 输出 log
     });

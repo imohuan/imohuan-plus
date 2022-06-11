@@ -1,4 +1,3 @@
-import chalk from "chalk";
 import { program } from "commander";
 
 import { formatLog } from "@imohuan/utils";
@@ -7,11 +6,11 @@ import pkg from "../../package.json";
 import { commandCreate } from "../commands/create";
 import { commandLanguage } from "../commands/language";
 import { commandLog } from "../commands/log";
+import { initCommand } from "../helper/command";
 import { initHelp } from "../helper/formatHelp";
+import { initOutput } from "../helper/formatOutput";
 import { get, i18n, initI18n } from "../helper/i18n";
 import { Ctx } from "./context";
-import { initCommand } from "../helper/command";
-import { initOutput } from "../helper/formatOutput";
 
 // https://juejin.cn/post/7106007795123617799
 export function registerCommand(ctx: Ctx) {

@@ -27,5 +27,8 @@
   "log-clear-success": "clearing logs succeeded",
   "log-clear-error": "failed to clear logs",
   "log-empty": "currently, there are no logs",
-  "create-list": "list of created templates"
+  "create-list": "list of created templates",
+  "select-log": "select the log",
+  "copy-success": "copy success",
+  "copy-error": "copy error"
 }

@@ -1,5 +1,9 @@
 1. pnpm workspace 安装 inquirer 后使用报错
     报错提示： chalk.blue is no function
+    解决: 1. pnpm中 packages.json添加
+            peerDependencies": {
+                "chalk": "^4.1.2" 改为4.1.2版本
+            },
 
 2. vite 打包 js 文件, 无法将一些es库打包到.js中
     如果不使用external去除, 打包的时候会直接报错

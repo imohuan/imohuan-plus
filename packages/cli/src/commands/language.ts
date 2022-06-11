@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import { Command, Option } from "commander";
+import inquirer from "inquirer";
 
 import { getCtx } from "../core/context";
 import { initCommand } from "../helper/command";
@@ -14,17 +15,33 @@ export function commandLanguage(program: Command) {
     .alias("ls")
     .description(get("language-list"))
     .action(() => {
-      ctx.logger.info(
-        get("support-language"),
-        languages.map((l) => chalk.yellow.bold(l)).join(", ")
-      );
+      const language = ctx.store.get("language", "zh");
+      const log = languages
+        .map((l) => {
+          return `${"".padEnd(2)}${chalk.green.bold(
+            (language === l ? "*" : "").padEnd(2)
+          )}${chalk.yellow.bold(l)}`;
+        })
+        .join("\n");
+      ctx.logger.info(get("support-language"), "\n" + log);
     });
 
   language
     .command("use")
-    .argument("<language>", get("select-language"))
+    .argument("[language]", get("select-language"))
     .description(get("use-language"))
-    .action((language) => {
+    .action(async (language) => {
+      if (!language) {
+        const result = await inquirer.prompt([
+          {
+            type: "list",
+            message: get("select-language"),
+            name: "language",
+            choices: languages
+          }
+        ]);
+        language = result.language;
+      }
       i18n.setLocale(language);
       ctx.logger.info(get("current-language"), chalk.yellow.bold(language));
       ctx.store.set("language", language);

@@ -6,10 +6,7 @@ console.log("inquirer", inquirer);
       type: "list",
       message: "请选择一种水果:",
       name: "fruit",
-      choices: ["Apple", "Pear", "Banana"],
-      filter: function (val) {
-        return val.toLowerCase();
-      }
+      choices: ["Apple", "Pear", "Banana"]
     }
   ]);
   console.log("result", result);

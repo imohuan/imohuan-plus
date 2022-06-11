@@ -24,7 +24,7 @@ export class Store<T> {
     this.db.write();
   }
 
-  get<K extends keyof T>(key?: K, defaults: any = null): T[K] {
+  get<K extends keyof T>(key?: K, defaults: T[K] | null = null): T[K] {
     this.db.read();
     return (key ? get(this.db.data, key, null) : this.db.data) || defaults;
   }

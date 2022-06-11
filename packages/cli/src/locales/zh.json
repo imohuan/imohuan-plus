@@ -27,5 +27,8 @@
   "log-clear-success": "清空日志成功",
   "log-clear-error": "清空日志失败",
   "log-empty": "当前还没有日志",
-  "create-list": "创建的模板列表"
+  "create-list": "创建的模板列表",
+  "select-log": "选择日志",
+  "copy-success": "复制成功",
+  "copy-error": "复制失败"
 }

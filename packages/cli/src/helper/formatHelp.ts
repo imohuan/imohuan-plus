@@ -1,4 +1,4 @@
-import chalk, { ChalkInstance } from "chalk";
+import chalk, { Chalk } from "chalk";
 import { Command } from "commander";
 import { defaultsDeep, max } from "lodash-es";
 import { promisify } from "util";
@@ -11,11 +11,11 @@ const figlet: any = promisify(require("figlet"));
 const helpArgs = ["args", "options", "commands", "usage"] as const;
 
 interface HelpColor {
-  logo: ChalkInstance;
-  usage: ChalkInstance;
-  head: ChalkInstance;
-  title: ChalkInstance;
-  description: ChalkInstance;
+  logo: Chalk;
+  usage: Chalk;
+  head: Chalk;
+  title: Chalk;
+  description: Chalk;
 }
 
 export function initHelp(program: Command, userHelpColor?: Partial<HelpColor>) {
