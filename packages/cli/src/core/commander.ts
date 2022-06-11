@@ -11,11 +11,17 @@ import { initHelp } from "../helper/formatHelp";
 import { initOutput } from "../helper/formatOutput";
 import { get, i18n, initI18n } from "../helper/i18n";
 import { Ctx } from "./context";
+import { initLocalesData } from "../helper/locales";
+
+// import { initLocalesData } from "./locales/init";
+// initLocalesData();
 
 // https://juejin.cn/post/7106007795123617799
 export function registerCommand(ctx: Ctx) {
   initI18n();
   initHelp(program, {});
+  initLocalesData();
+
   i18n.setLocale(ctx.store.get("language", "zh"));
 
   program.name(ctx.name.replaceAll(" ", "-").toLocaleLowerCase()).usage("[command] [options]");

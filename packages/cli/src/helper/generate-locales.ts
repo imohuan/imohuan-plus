@@ -2,11 +2,11 @@ import { readFileSync, writeFile, writeFileSync } from "fs-extra";
 import { get, set, values } from "lodash-es";
 import { resolve } from "path";
 import { getCtx } from "../core/context";
-import { get as I18nGet } from "./I18n";
+import { get as I18nGet } from "./i18n";
 
 const files = {
-  en: resolve(__dirname, "../locales/en.json"),
-  zh: resolve(__dirname, "../locales/zh.json")
+  en: resolve(__dirname, "locales/en.json"),
+  zh: resolve(__dirname, "locales/zh.json")
 };
 
 export function localReset() {

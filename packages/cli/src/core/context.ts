@@ -1,7 +1,9 @@
 import { logger, Logger } from "@imohuan/utils";
 import { set, get } from "lodash-es";
 import { resolve } from "path";
+import userHome from "user-home";
 import { Store } from "@imohuan/utils";
+import { ensureDirSync } from "fs-extra";
 
 export type Global = {
   ctx: Ctx;
@@ -18,16 +20,16 @@ export class Ctx {
   logger: Logger;
 
   static getInstance() {
-    return new Ctx("Imohuan Cli", resolve(process.cwd(), "dist"));
+    return new Ctx("Imohuan Cli", resolve(userHome, ".imohuan-cli"));
   }
 
   constructor(name: string, dirname: string) {
     this.name = name;
     this.dirname = dirname;
+    ensureDirSync(dirname);
     this.store = new Store<LocalStore>(resolve(dirname, "config.json"), {
       language: "zh"
     });
-
     this.logger = logger(name, resolve(dirname, "log"));
     this.set("ctx", this);
   }

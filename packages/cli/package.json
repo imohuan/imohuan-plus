@@ -5,11 +5,11 @@
   "main": "src/index.ts",
   "version": "0.0.0",
   "bin": {
-    "imohuan-cli": "./bin/imohuan-cli.ts"
+    "imohuan-cli": "./bin/imohuan-cli.js"
   },
   "scripts": {
-    "dev": "esno src/index.ts",
-    "build": "vite build"
+    "dev": "esno ./scripts/dev",
+    "build": "esno ./scripts/build"
   },
   "peerDependencies": {
     "chalk": "^4.1.2"

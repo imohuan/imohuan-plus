@@ -16,7 +16,6 @@
   "use-language": "use language",
   "current-language": "current language",
   "select-language": "select language",
-  "": "",
   "create-name": "create project name",
   "version": "Version",
   "required-argument": "missing required argument",
@@ -30,5 +29,6 @@
   "create-list": "list of created templates",
   "select-log": "select the log",
   "copy-success": "copy success",
-  "copy-error": "copy error"
+  "copy-error": "copy error",
+  "": ""
 }

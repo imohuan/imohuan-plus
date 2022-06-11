@@ -1,4 +1,4 @@
-import { setLocals } from "../helper/generate-locales";
+import { setLocals } from "./generate-locales";
 
 export function initLocalesData() {
   setLocals([

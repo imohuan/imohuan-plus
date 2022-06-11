@@ -19,7 +19,14 @@ export default defineConfig(() => {
         }
       },
       rollupOptions: {
-        external: ["chalk", "commander"].concat(builtinModules)
+        external: [
+          "chalk",
+          "commander",
+          "fs-extra",
+          "i18n",
+          "winston",
+          "winston-daily-rotate-file"
+        ].concat(builtinModules)
       }
     }
   };

@@ -1,13 +1,10 @@
-import { resolve } from "path";
-
+#!/usr/bin/env node
 import { registerCommand } from "./core/commander";
 import { Ctx } from "./core/context";
 import { checkNodeVersion, checkRoot, checkUpdate, checkUserHome } from "./prepare/check";
-import { initLocalesData } from "./locales/init";
 
 const ctx = Ctx.getInstance();
 
-initLocalesData();
 export async function main() {
   try {
     checkRoot(ctx);
@@ -19,3 +16,5 @@ export async function main() {
     ctx.logger.error(e.message);
   }
 }
+
+main();

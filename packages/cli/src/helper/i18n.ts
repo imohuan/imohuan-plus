@@ -8,12 +8,11 @@ export const languages = ["en", "zh"];
 export const initI18n = (options?: i18n.ConfigurationOptions) => {
   i18n.configure(
     defaultsDeep(options, {
-      locales: languages,
-      directory: resolve(__dirname, "../locales")
+      locales: ["___"].concat(languages),
+      directory: resolve(__dirname, "locales")
     })
   );
-
-  i18n.setLocale("en");
+  i18n.setLocale("___");
   return i18n;
 };
 

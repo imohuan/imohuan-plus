@@ -25,18 +25,22 @@ export function commandLog(program: Command) {
       });
   };
 
-  const readLog = async (path: string) => {
+  const readLog = async (path: string): Promise<any> => {
     let contents = readFileSync(path).toString().split("\n");
-    console.log("contents", contents);
-    while (true) {
+    console.log(contents.splice(0, 10).join("\n"));
+    let exit = true;
+    while (exit) {
       const { value } = await inquirer.prompt([
         {
           type: "input",
           message: "",
-          name: "value"
+          name: "value",
+          askAnswered: false
         }
       ]);
-      console.log("value", value);
+      if (value === "q") return (exit = false);
+      if (contents.length === 0) return (exit = false);
+      console.log(contents.shift());
     }
   };
 
@@ -57,7 +61,8 @@ export function commandLog(program: Command) {
           type: "list",
           message: "选择方式",
           name: "types",
-          choices: ["命令行阅读", "复制地址", "打印地址"]
+          // "命令行阅读",
+          choices: ["复制地址", "打印地址"]
         }
       ]);
 
@@ -68,25 +73,7 @@ export function commandLog(program: Command) {
           else ctx.logger.error(get("copy-error"));
           break;
         case "命令行阅读":
-          // await readLog(path);
-          const { value } = await inquirer.prompt([
-            {
-              type: "input",
-              message: "111",
-              name: "value"
-            },
-            {
-              type: "input",
-              message: "222",
-              name: "value"
-            },
-            {
-              type: "input",
-              message: "333",
-              name: "value"
-            }
-          ]);
-          console.log("value", value);
+          readLog(path);
           break;
         case "打印地址":
           ctx.logger.info(path);
