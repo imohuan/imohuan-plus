@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { builtinModules } from "node:module";
+import pkg from "./package.json";
 
 export default defineConfig(() => {
   return {
@@ -19,14 +20,7 @@ export default defineConfig(() => {
         }
       },
       rollupOptions: {
-        external: [
-          "chalk",
-          "commander",
-          "fs-extra",
-          "i18n",
-          "winston",
-          "winston-daily-rotate-file"
-        ].concat(builtinModules)
+        external: [...Object.keys(pkg.devDependencies), ...builtinModules]
       }
     }
   };

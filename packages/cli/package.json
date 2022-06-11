@@ -3,19 +3,28 @@
   "private": false,
   "license": "MIT",
   "main": "src/index.ts",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "bin": {
     "imohuan-cli": "./bin/imohuan-cli.js"
   },
   "scripts": {
     "dev": "esno ./scripts/dev",
-    "build": "esno ./scripts/build"
+    "build": "esno ./scripts/build",
+    "vite:build": "vite build"
   },
-  "peerDependencies": {
-    "chalk": "^4.1.2"
+  "dependencies": {
+    "@imohuan/utils": "workspace:*",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.4",
+    "commander": "^9.3.0",
+    "figlet": "^1.5.2",
+    "metalsmith": "^2.4.3",
+    "download-git-repo": "^3.0.2",
+    "i18n": "^0.15.0",
+    "ora": "^6.1.0"
   },
   "devDependencies": {
-    "@imohuan/utils": "workspace:*",
+    "@types/fs-extra": "^9.0.13",
     "@types/i18n": "^0.13.3",
     "@types/figlet": "^1.5.4",
     "@types/semver": "^7.3.9",
@@ -23,15 +32,10 @@
     "@types/user-home": "^2.0.0",
     "@types/commander": "^2.12.2",
     "@types/root-check": "^1.0.0",
-    "commander": "^9.3.0",
-    "figlet": "^1.5.2",
-    "latest-version": "^6.0.0",
-    "metalsmith": "^2.4.3",
-    "ora": "^6.1.0",
-    "root-check": "^2.0.0",
     "semver": "^7.3.7",
-    "download-git-repo": "^3.0.2",
-    "i18n": "^0.15.0",
-    "user-home": "^3.0.0"
+    "fs-extra": "^10.1.0",
+    "user-home": "^3.0.0",
+    "root-check": "^2.0.0",
+    "latest-version": "^6.0.0"
   }
 }

@@ -1,25 +1,19 @@
-# @imohuan/cli
+## 0.0.2
 
-## 4.0.2
-
-### Patch Changes
-
-- 完成 Log
-
-## 4.0.1
+## 0.0.4
 
 ### Patch Changes
 
-- 更新一些内容
+- 修改依赖
+- Updated dependencies
+  - @imohuan/utils@0.0.4
 
-## 4.0.0
+### Patch Changes
 
-### Major Changes
+- 命令微调
 
-- 测试
+## 0.0.1
 
-## 3.0.0
+### Patch Changes
 
-### Major Changes
-
-- 测试消息
+- 基础命令

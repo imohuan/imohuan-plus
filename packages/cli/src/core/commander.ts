@@ -19,9 +19,8 @@ import { initLocalesData } from "../helper/locales";
 // https://juejin.cn/post/7106007795123617799
 export function registerCommand(ctx: Ctx) {
   initI18n();
-  initHelp(program, {});
   initLocalesData();
-
+  initHelp(program, {});
   i18n.setLocale(ctx.store.get("language", "zh"));
 
   program.name(ctx.name.replaceAll(" ", "-").toLocaleLowerCase()).usage("[command] [options]");

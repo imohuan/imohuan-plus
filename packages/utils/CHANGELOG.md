@@ -1,13 +1,25 @@
 # @imohuan/utils
 
-## 4.0.2
+## 0.0.4
 
 ### Patch Changes
 
-- 完成 Log
+- 修改依赖
 
-## 4.0.1
+## 0.0.3
 
 ### Patch Changes
 
-- 更新一些内容
+- 修改依赖
+
+## 0.0.2
+
+### Patch Changes
+
+- 命令微调
+
+## 0.0.1
+
+### Patch Changes
+
+- 基础命令
