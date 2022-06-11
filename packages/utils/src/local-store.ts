@@ -1,8 +1,6 @@
 import { set, get } from "lodash-es";
 import { JSONFileSync, LowSync } from "lowdb";
 
-type Data = {};
-
 export class Store<T> {
   db: LowSync<any>;
 

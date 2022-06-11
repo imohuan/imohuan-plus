@@ -2,7 +2,7 @@ import { Command } from "commander";
 
 import { getCtx } from "../core/context";
 import { initCommand } from "../helper/command";
-import { download } from "../helper/download";
+// import { download } from "../helper/download";
 import { get } from "../helper/i18n";
 
 export function commandCreate(program: Command) {

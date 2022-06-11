@@ -91,6 +91,5 @@ export const logger = (labelName: string, dirname: string) => {
       createRotateFile("error", dirname)
     ]
   });
-
   return result;
 };
