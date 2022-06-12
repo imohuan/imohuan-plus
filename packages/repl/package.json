@@ -1,0 +1,21 @@
+{
+  "name": "@imohuan/repl",
+  "private": false,
+  "license": "MIT",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "esno src/index.ts",
+    "build": "esno scripts/build.ts"
+  },
+  "dependencies": {
+    "sucrase": "^3.21.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@babel/traverse": "^7.18.2",
+    "@babel/types": "^7.18.4",
+    "@types/glob": "^7.2.0",
+    "glob": "^8.0.3"
+  }
+}

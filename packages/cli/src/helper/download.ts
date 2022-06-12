@@ -32,7 +32,7 @@ export const download = (
       if (ops.force) {
         removeSync(dirname);
       } else {
-        const result = await inquirer.prompt([
+        const { isDelete } = await inquirer.prompt([
           {
             type: "list",
             message: get("download-exist"),
@@ -40,8 +40,8 @@ export const download = (
             choices: [get("delete"), get("cancel")]
           }
         ]);
-
-        if (result.isDelete === get("delete")) {
+        if (isDelete === get("cancel")) return;
+        if (isDelete === get("delete")) {
           const spinner = ora(chalk.green.bold(get("remove-project"))).start();
           removeSync(dirname);
           spinner.stop();
@@ -53,7 +53,7 @@ export const download = (
 
     const url = `direct:${gitUrl}#${ops.branch}`;
     console.log("url", url);
-    const spinner = ora(chalk.green.bold("正在下载模板")).start();
+    const spinner = ora(chalk.green.bold(get("download-project"))).start();
     gitDownload(url, dirname, { clone: true }, (err: Error) => {
       if (err && err.message.indexOf("git checkout") === -1)
         _resolve({ status: false, message: err.message });

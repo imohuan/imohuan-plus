@@ -12,10 +12,14 @@ import { initOutput } from "../helper/formatOutput";
 import { get, i18n, initI18n } from "../helper/i18n";
 import { Ctx } from "./context";
 import { commandUpdate } from "../commands/update";
+import { commandRepl } from "../commands/repl";
 
 export function registerCommand(ctx: Ctx) {
   initI18n();
   initHelp(program, {});
+  initOutput(program);
+  initCommand(program);
+
   i18n.setLocale(ctx.store.get("language", "zh"));
 
   program.name(ctx.name.replaceAll(" ", "-").toLocaleLowerCase()).usage("[command] [options]");
@@ -26,10 +30,9 @@ export function registerCommand(ctx: Ctx) {
     get("command-version")
   );
 
-  initOutput(program);
-  initCommand(program);
   commandLanguage(program);
   commandCreate(program);
+  commandRepl(program);
   commandLog(program);
   commandUpdate(program);
 

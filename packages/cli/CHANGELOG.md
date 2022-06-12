@@ -1,5 +1,13 @@
 ## 0.0.2
 
+## 0.0.5
+
+### Patch Changes
+
+- 修改
+- Updated dependencies
+  - @imohuan/utils@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
