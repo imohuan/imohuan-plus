@@ -10,6 +10,7 @@ export type Global = {
 };
 
 export type LocalStore = {
+  updateTime: string;
   language: "en" | "zh";
 };
 
@@ -28,6 +29,7 @@ export class Ctx {
     this.dirname = dirname;
     ensureDirSync(dirname);
     this.store = new Store<LocalStore>(resolve(dirname, "config.json"), {
+      updateTime: "",
       language: "zh"
     });
     this.logger = logger(name, resolve(dirname, "log"));

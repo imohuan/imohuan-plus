@@ -4,18 +4,19 @@ import { resolve } from "path";
 
 export const i18n = new I18n();
 export const languages = ["en", "zh"];
+export const i18nPath = resolve(__dirname, "../src/locales");
 
 export const initI18n = (options?: i18n.ConfigurationOptions) => {
   i18n.configure(
     defaultsDeep(options, {
-      locales: ["___"].concat(languages),
-      directory: resolve(__dirname, "locales")
+      locales: languages,
+      directory: i18nPath
     })
   );
-  i18n.setLocale("___");
+
   return i18n;
 };
 
-export const get = (key: string, num: number = 0) => {
-  return i18n.__n(key, num);
+export const get = (key: string, data: any = {}) => {
+  return i18n.__mf(i18n.__(key), data);
 };

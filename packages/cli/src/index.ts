@@ -7,8 +7,8 @@ const ctx = Ctx.getInstance();
 
 export async function main() {
   try {
+    await checkUpdate(ctx);
     checkRoot(ctx);
-    checkUpdate(ctx);
     checkUserHome(ctx);
     checkNodeVersion(ctx);
     registerCommand(ctx);

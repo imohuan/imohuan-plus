@@ -11,15 +11,10 @@ import { initHelp } from "../helper/formatHelp";
 import { initOutput } from "../helper/formatOutput";
 import { get, i18n, initI18n } from "../helper/i18n";
 import { Ctx } from "./context";
-import { initLocalesData } from "../helper/locales";
+import { commandUpdate } from "../commands/update";
 
-// import { initLocalesData } from "./locales/init";
-// initLocalesData();
-
-// https://juejin.cn/post/7106007795123617799
 export function registerCommand(ctx: Ctx) {
   initI18n();
-  initLocalesData();
   initHelp(program, {});
   i18n.setLocale(ctx.store.get("language", "zh"));
 
@@ -36,6 +31,7 @@ export function registerCommand(ctx: Ctx) {
   commandLanguage(program);
   commandCreate(program);
   commandLog(program);
+  commandUpdate(program);
 
   program.parse();
 }

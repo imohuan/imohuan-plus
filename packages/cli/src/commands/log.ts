@@ -59,46 +59,46 @@ export function commandLog(program: Command) {
         },
         {
           type: "list",
-          message: "选择方式",
+          message: get("select-type"),
           name: "types",
           // "命令行阅读",
-          choices: ["复制地址", "打印地址"]
+          choices: [get("copy-address"), get("print-address")]
         }
       ]);
 
       switch (types) {
-        case "复制地址":
+        case get("copy-address"):
           const result = await copy(path);
           if (result.status) ctx.logger.info(get("copy-success"));
           else ctx.logger.error(get("copy-error"));
           break;
-        case "命令行阅读":
+        case "阅读文件(未找到解决方案)":
           readLog(path);
           break;
-        case "打印地址":
+        case get("print-address"):
           ctx.logger.info(path);
           break;
       }
     });
 
-  log
-    .command("look")
-    .argument("[path]", get("log-look-path"))
-    .description(get("log-look"))
-    .action(async () => {
-      const logs = getLogs();
-      const { path } = await inquirer.prompt([
-        {
-          type: "list",
-          message: get("select-log"),
-          name: "path",
-          choices: logs
-        }
-      ]);
-      //
-      // 交互选中 log
-      // 输出 log
-    });
+  // log
+  //   .command("look")
+  //   .argument("[path]", get("log-look-path"))
+  //   .description(get("log-look"))
+  //   .action(async () => {
+  //     const logs = getLogs();
+  //     const { path } = await inquirer.prompt([
+  //       {
+  //         type: "list",
+  //         message: get("select-log"),
+  //         name: "path",
+  //         choices: logs
+  //       }
+  //     ]);
+  //     //
+  //     // 交互选中 log
+  //     // 输出 log
+  //   });
 
   log
     .command("clear")

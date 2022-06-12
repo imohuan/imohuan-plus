@@ -1,8 +1,9 @@
 import { Command } from "commander";
+import inquirer from "inquirer";
 
 import { getCtx } from "../core/context";
 import { initCommand } from "../helper/command";
-// import { download } from "../helper/download";
+import { download } from "../helper/download";
 import { get } from "../helper/i18n";
 
 export function commandCreate(program: Command) {
@@ -10,26 +11,51 @@ export function commandCreate(program: Command) {
   const create = program
     .command("create")
     .usage("<project_name>")
+    .argument("<project_name>", get("create-name"))
     .description(get("command-create"));
 
-  create
-    .command("*", { hidden: true })
-    .argument("<project_name>", get("create-name"))
-    .action(async (project_name) => {
-      console.log("project_name", project_name);
-      // todo 交互未解决 (pnpm workspace的锅)
-      // 1. 选择模板类型 (cmd交互暂时无法使用)
-      // await download("https://github.com/imohuan/imohuan-plus", "temp");
-      // 2. 下载模板
-      // 3. 打印结果
-    });
+  // create.command("*", { hidden: true }).argument("<project_name>", get("create-name"));
 
-  create
-    .command("list")
-    .description(get("create-list"))
-    .action(() => {
-      ctx.logger.info("[1,2,3]");
-    });
+  create.action(async (project_name): Promise<any> => {
+    // 1. 选择模板类型
+    let components = ["unocss", "vue-router", "pinia", "vueuse", "md", "element-ui", "quasar"];
+    const { template } = await inquirer.prompt([
+      {
+        type: "list",
+        message: "选择模板",
+        name: "template",
+        choices: ["lib-ts", "vue-ts"]
+      }
+    ]);
+
+    if (template === "vue-ts") {
+      const vueConfig = await inquirer.prompt([
+        {
+          type: "checkbox",
+          name: "components",
+          message: "选择组件",
+          choices: components
+        }
+      ]);
+      components = vueConfig.components;
+    }
+
+    // 2. 下载模板
+    const { status, message } = await download(
+      "https://github.com/imohuan/imohuan-plus",
+      project_name
+    );
+
+    if (!status) {
+      return ctx.logger.error(message);
+    }
+
+    // 3. 执行增量结果
+    // 根据 components 来进行 add 或者 remove
+
+    // 4. 打印结果
+    ctx.logger.info("create-success");
+  });
 
   initCommand(create);
 }

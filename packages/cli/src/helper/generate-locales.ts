@@ -1,12 +1,11 @@
-import { readFileSync, writeFile, writeFileSync } from "fs-extra";
-import { get, set, values } from "lodash-es";
+import { ensureFileSync, readFileSync, writeFileSync } from "fs-extra";
+import { set } from "lodash-es";
 import { resolve } from "path";
-import { getCtx } from "../core/context";
-import { get as I18nGet } from "./i18n";
 
+const i18nPath = resolve(__dirname, "../locales");
 const files = {
-  en: resolve(__dirname, "locales/en.json"),
-  zh: resolve(__dirname, "locales/zh.json")
+  en: resolve(i18nPath, "en.json"),
+  zh: resolve(i18nPath, "zh.json")
 };
 
 export function localReset() {
@@ -16,15 +15,17 @@ export function localReset() {
 }
 
 export function setLocals(data: [name: string, zh: string, en: string][]) {
-  const ctx = getCtx();
   Object.keys(files).forEach((language) => {
     try {
+      const json = {};
       const path = (files as any)[language];
-      const json = JSON.parse(readFileSync(path).toString());
-      data.forEach((item) => set(json, item[0], item[language === "zh" ? 1 : 2]));
+      data.forEach((item) => {
+        const value = item[language === "zh" ? 1 : 2];
+        set(json, item[0], value);
+      });
       writeFileSync(path, JSON.stringify(json, null, 2));
     } catch (e: any) {
-      ctx.logger.error(I18nGet("set-locals-error"));
+      console.log("解析失败", e.message);
     }
   });
 }

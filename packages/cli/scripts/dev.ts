@@ -1,7 +1,20 @@
 import chokidar from "chokidar";
-import { build } from "./build";
+import { readFileSync } from "fs-extra";
 import { resolve } from "path";
 
-chokidar.watch(resolve(__dirname, "..", "src")).on("change", () => {
-  build();
+import { setLocals } from "../src/helper/generate-locales";
+import { build } from "./build";
+
+chokidar.watch(resolve(__dirname, "..", "src")).on("change", (path) => {
+  if (path.endsWith(".json")) return;
+  try {
+    build();
+  } catch {}
+});
+
+chokidar.watch(resolve(__dirname, "..", "src/helper/locales.json")).on("change", (path) => {
+  try {
+    const json = JSON.parse(readFileSync(path).toString());
+    setLocals(json);
+  } catch {}
 });

@@ -7,7 +7,7 @@
     "preinstall": "npx only-allow pnpm",
     "clear": "rimraf 'packages/*/{node_modules}' && rimraf node_modules",
     "commit": "git add . && git commit -m 'hello' && git push",
-    "release": "changeset && changeset version && pnpm release:only",
+    "release": "changeset && changeset version && pnpm -r build && pnpm release:only",
     "release:only": "changeset publish --registry=https://registry.npmjs.com/"
   },
   "keywords": [],

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <style id="__sfc-styles"></style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->
+    <script async src="https://unpkg.com/es-module-shims@0.10.1/dist/es-module-shims.min.js"></script>
+    <script type="importmap">
+      {"imports":{"vue":"https://unpkg.com/@vue/runtime-dom@3.2.37/dist/runtime-dom.esm-browser.js","components/index.vue":"G:\\Project\\imohuan\\test\\src\\components\\index.vue","test.ts":"G:\\Project\\imohuan\\test\\src\\test.ts"}}
+    </script>
+    <script type="module">
+window.__modules__ = {};window.__css__ = '';if (window.__app__) window.__app__.unmount();document.body.innerHTML = '<div id="app"></div>'
+</script>
+<script type="module">
+const __module__ = __modules__["components/index.vue"] = { [Symbol.toStringTag]: "Module" }
+
+const __sfc__ = {}
+function render(_ctx, _cache) {
+  return "xxxxxxxxxxxxxxxxx"
+}
+__sfc__.render = render
+__sfc__.__file = "components/index.vue"
+__module__.default = __sfc__
+window.__css__ += "/* No <style> tags present */"
+</script>
+<script type="module">
+const __module__ = __modules__["App.vue"] = { [Symbol.toStringTag]: "Module" }
+
+/* Analyzed bindings: {
+  "Im": "setup-const"
+} */
+import { defineComponent as _defineComponent } from 'vue'
+import { createVNode as _createVNode, createTextVNode as _createTextVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from "vue"
+
+const _hoisted_1 = /*#__PURE__*/_createTextVNode(" 2222 ")
+
+const __import_1__ = __modules__["components/index.vue"]
+
+
+const __sfc__ = /*#__PURE__*/_defineComponent({
+  __name: 'App',
+  setup(__props) {
+
+console.log(22);
+
+return (_ctx,_cache) => {
+  return (_openBlock(), _createElementBlock(_Fragment, null, [
+    _hoisted_1,
+    _createVNode(__import_1__.default)
+  ], 64 /* STABLE_FRAGMENT */))
+}
+}
+
+})
+__sfc__.__file = "App.vue"
+__module__.default = __sfc__
+window.__css__ += "/* No <style> tags present */"
+</script>
+<script type="module">
+document.getElementById('__sfc-styles').innerHTML = window.__css__
+</script>
+<script type="module">
+import { createApp as _createApp } from "vue"
+          const AppComponent = __modules__["App.vue"].default
+          AppComponent.name = 'Repl'
+          const app = window.__app__ = _createApp(AppComponent)
+          app.config.unwrapInjectedRef = true
+          app.config.errorHandler = e => console.error(e)
+          app.mount('#app')
+</script>
+  </head>
+  <body></body>
+</html>

@@ -12,6 +12,9 @@ export function initOutput(program: Command) {
       if (str.indexOf("error: missing required argument") !== -1) {
         const args = str.match(/\'(.+)\'/)![1];
         ctx.logger.error(`${get("required-argument")} "${chalk.yellow.bold(args)}"`);
+      } else if (str.indexOf("unknown option") !== -1) {
+        const args = str.match(/\'(.+)\'/)![1];
+        ctx.logger.error(`${get("unknown-option")} "${chalk.yellow.bold(args)}"`);
       } else {
         ctx.logger.error(str);
       }
