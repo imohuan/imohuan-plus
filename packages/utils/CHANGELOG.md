@@ -1,5 +1,11 @@
 # @imohuan/utils
 
+## 0.0.6
+
+### Patch Changes
+
+- 完善
+
 ## 0.0.5
 
 ### Patch Changes

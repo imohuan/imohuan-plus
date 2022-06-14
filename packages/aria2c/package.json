@@ -1,0 +1,15 @@
+{
+  "name": "@imohuan/aria2c",
+  "private": false,
+  "license": "MIT",
+  "main": "index.ts",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "esno src/index.ts",
+    "build": "esno scripts/build.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "aria2": "^4.1.2"
+  }
+}

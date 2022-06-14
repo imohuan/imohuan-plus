@@ -1,0 +1,23 @@
+{
+  "name": "@imohuan/selector",
+  "private": false,
+  "license": "MIT",
+  "main": "src/index.ts",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "browser": "./dist/selector.browser.js"
+    }
+  },
+  "scripts": {
+    "dev": "esno src/index.ts",
+    "build": "esno scripts/build.ts"
+  },
+  "dependencies": {
+    "cheerio": "1.0.0-rc.11"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^0.14.2",
+    "mitt": "^3.0.0"
+  }
+}

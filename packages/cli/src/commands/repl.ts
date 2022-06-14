@@ -90,5 +90,12 @@ export function commandRepl(program: Command) {
       startServer("");
     });
 
+  repl
+    .command("CDN")
+    .description(get("cdn-desc"))
+    .action(() => {
+      // https://juejin.cn/post/7076724865083899935
+    });
+
   initCommand(repl);
 }

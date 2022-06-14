@@ -1,0 +1,23 @@
+selector 修改
+
+1. 让dom中的2个类继承一些公用方法, 如 parseClass....
+
+2.  修改一些 DataParser
+
+3.  创建一个 JsonParser (单独操作JSON)
+
+4.  看是否可以抽象一个公用类
+
+
+
+
+
+需要添加的新功能
+1. JSON => data.list[@].xxx.xxx
+        => data.list[1].xxx.xxx
+        => data.list[1,3].xxx.xxx
+        => data.list[1,-1].xxx.xxx
+        => .....
+
+
+2. 目标获取对应的数据
