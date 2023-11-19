@@ -1,0 +1,19 @@
+滚动条
+scrollbarWidth	8px	          scrollbar width
+scrollbarHeight	8px	          scrollbar height
+scrollbarTrackRadius	4px	    scrollbar track radius
+scrollbarThumbRadius	4px	    scrollbar thumb radius
+scrollbarTrackColor	#f5f5f5	  scrollbar track background color
+scrollbarThumbColor	#ddd	    scrollbar thumb background color
+numberToUnit	                value => `${value / 4}rem`	number to unit
+varPrefix	''	                the css variable prefix of this preset
+
+
+scrollbar 
+scrollbar-w-4px 
+scrollbar-rounded 
+scrollbar-radius-2
+scrollbar-track-radius-4 
+scrollbar-thumb-radius-4
+scrollbar-track-color-gray-800 
+scrollbar-thumb-color-teal-700

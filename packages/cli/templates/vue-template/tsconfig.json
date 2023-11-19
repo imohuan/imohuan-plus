@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": false,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "strictFunctionTypes": false,
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": false,
+    "baseUrl": ".",
+    "allowJs": false,
+    "incremental": false,
+    "paths": {
+      "@/*": ["src/*"],
+      "c/*": ["src/components/*"]
+    },
+    "types": ["node", "vite/client", "cypress"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    "typings/*.d.ts",
+    "scripts/**/*.ts",
+    "scripts/**/*.d.ts",
+    "plugins/**/*.ts",
+    "plugins/**/*.d.ts",
+    "test/**/*.ts",
+    "cypress/**/*.ts",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+}

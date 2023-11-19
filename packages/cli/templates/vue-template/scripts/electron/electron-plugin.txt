@@ -1,0 +1,6 @@
+import Renderer from "vite-plugin-electron/renderer";
+import PolyfillExports from "vite-plugin-electron/polyfill-exports";
+
+export function Electron() {
+  return Renderer().concat(PolyfillExports());
+}

@@ -1,0 +1,15 @@
+/*
+*,
+::before,
+::after {
+  --un-bg-opacity: 1;
+  --primary: rgb(174, 90, 45, var(--un-bg-opacity)) !important;
+  --secondary: rgb(38, 166, 154, var(--un-bg-opacity)) !important;
+  --accent: rgb(156, 39, 176, var(--un-bg-opacity)) !important;
+  --dark: rgb(29, 29, 29, var(--un-bg-opacity)) !important;
+  --positive: rgb(33, 186, 69, var(--un-bg-opacity)) !important;
+  --negative: rgb(193, 0, 21, var(--un-bg-opacity)) !important;
+  --info: rgb(49, 204, 236, var(--un-bg-opacity)) !important;
+  --warning: rgb(242, 192, 55, var(--un-bg-opacity)) !important;
+}
+*/

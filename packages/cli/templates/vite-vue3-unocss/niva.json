@@ -1,0 +1,11 @@
+{
+  "name": "vite-vue3-unocss",
+  "uuid": "9d2e02ae-b5b2-4cde-8c85-2183c496fd25",
+  "debug": {
+    "entry": "http://localhost:5173",
+    "resource": "public"
+  },
+  "build": {
+    "resource": "dist"
+  }
+}

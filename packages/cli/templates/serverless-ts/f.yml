@@ -1,0 +1,25 @@
+service:
+  name: midway-demo
+
+provider:
+  name: tencent
+  # name: aliyun
+  timeout: 60 # 单位秒
+  region: ap-shanghai
+
+aggregation:
+  all:
+    functionsPattern: "*"
+
+custom:
+  customDomain:
+    domainName: auto
+
+# 配置开启实验性功能
+experimentalFeatures:
+  # 在构建时忽略ts error，不中断构建过程。
+  ignoreTsError: true
+  # 构建时移除大量无效文件，例如 LICENSE、*.ts.map、**/test/ 等文件，可以有效减少构建包尺寸。
+  removeUselessFiles: true
+  # 在构建时从当前的 devDependencies 中挑选出 production 依赖进行发布，可能会显著提升发布速度。
+  fastInstallNodeModules: true

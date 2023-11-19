@@ -1,0 +1,16 @@
+{
+  "name": "@imohuan-plus/utils-common",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "description": "",
+  "author": "",
+  "homepage": "",
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.6"
+  }
+}

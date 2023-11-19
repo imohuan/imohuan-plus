@@ -1,0 +1,17 @@
+修改build.ts中的配置
+
+下面代码名称等等其他属性，需要根据自身情况修改
+const head = buildHead({
+  name: "Hello world",
+  namespace: "",
+  description: "",
+  version: "1.0.0",
+  includes: ["*://*"],
+  grants: [GmFunctions.unsafeWindow],
+  runAt: RunAt.document_start,
+  requires: ["https://cdn.tailwindcss.com"]
+});
+
+
+修改完成后指向命令即可
+pnpm run tampermonkey

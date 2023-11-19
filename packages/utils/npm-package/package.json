@@ -1,0 +1,20 @@
+{
+  "name": "@imohuan-plus/npm-package",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "description": "npm包安装",
+  "author": "",
+  "homepage": "",
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@imohuan-plus/info": "workspace:*",
+    "@imohuan-plus/utils-common": "workspace:*",
+    "fs-extra": "^11.1.0",
+    "npminstall": "^7.4.0",
+    "pkg-dir": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1"
+  }
+}

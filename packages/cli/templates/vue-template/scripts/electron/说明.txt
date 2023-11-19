@@ -1,0 +1,19 @@
+使用Electron之前需要进行初始化
+
+1. 进行初始化
+esno ./scripts/electron/init.ts
+
+2. 安装Electron所需依赖
+pnpm i
+
+3. 修改Vite插件 ./plugins/index.ts
+添加electron插件，插件地址在初始化的时候写入了./plugins/electron/index.ts
+直接在 ./plugins/index.ts 中导入即可
+
+
+
+目前electron的基础内容还很少，以后会添加更多内容
+
+
+
+
