@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/info",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "description": "获取Npm库的信息",
   "author": "",
