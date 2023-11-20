@@ -2,10 +2,13 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "prepublishOnly": "pnpm -r build"
+    "prepublishOnly": "pnpm -r build",
+    "commitlint": "commitlint --edit"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-conventional": "^18.4.2",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash-es": "^4.17.11",
     "@types/node": "^20.9.2",
