@@ -1,14 +1,15 @@
 {
   "name": "@imohuan-plus/npm-package",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "npm包安装",
-  "author": "",
-  "homepage": "",
-  "keywords": [],
-  "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build1": "esno build.ts"
+    "build": "tsup src/index.ts --dts --format cjs --minify --external npminstall",
+    "build:esbuild": "esbuild src/index.ts --outfile=dist/index.js --bundle --platform=node --minify --external:npminstall"
   },
   "dependencies": {
     "npminstall": "^7.4.0"

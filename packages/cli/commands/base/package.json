@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "description": "Command基础包",
-  "author": "",
-  "homepage": "",
-  "keywords": [],
-  "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "chalk": "^4.1.2",
     "ora": "^6.1.2",

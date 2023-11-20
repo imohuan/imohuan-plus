@@ -3,13 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "description": "日志打印",
-  "author": "",
-  "homepage": "",
-  "keywords": [],
-  "license": "ISC",
-  "scripts": {
-    "build": "esno build.ts"
-  },
+  "scripts": {},
   "dependencies": {
     "chalk": "^4.1.2",
     "moment": "^2.29.4",

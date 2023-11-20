@@ -3,15 +3,9 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "description": "获取Npm库的信息",
-  "author": "",
-  "homepage": "",
-  "keywords": [],
-  "license": "ISC",
-  "dependencies": {
-    "got": "^12.5.3",
-    "semver": "^7.3.8"
-  },
   "devDependencies": {
+    "got": "^12.5.3",
+    "semver": "^7.3.8",
     "@types/semver": "^7.3.13"
   }
 }
