@@ -31,7 +31,7 @@ export async function core(argv: string[]) {
     await prepare();
     registerCommand(label, pkg.version);
   } catch (e: any) {
-    logger.verboseError(e);
+    logger.verboseError(e.message);
   }
 }
 

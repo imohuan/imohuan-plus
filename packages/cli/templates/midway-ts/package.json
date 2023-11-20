@@ -1,64 +1,8 @@
 {
-  "name": "my-midway-project",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "dependencies": {
-    "@midwayjs/bootstrap": "^3.0.0",
-    "@midwayjs/core": "^3.0.0",
-    "@midwayjs/cross-domain": "^3.1.0",
-    "@midwayjs/decorator": "^3.0.0",
-    "@midwayjs/info": "^3.0.0",
-    "@midwayjs/jwt": "^3.1.0",
-    "@midwayjs/koa": "^3.0.0",
-    "@midwayjs/logger": "^2.14.0",
-    "@midwayjs/passport": "^3.1.0",
-    "@midwayjs/static-file": "3",
-    "@midwayjs/validate": "^3.0.0",
-    "@midwayjs/ws": "3",
-    "passport": "^0.5.2",
-    "passport-jwt": "^4.0.0"
-  },
-  "devDependencies": {
-    "@midwayjs/bundle-helper": "^1.0.2",
-    "@midwayjs/cli": "^1.2.90",
-    "@midwayjs/mock": "^3.0.0",
-    "@types/jest": "^26.0.10",
-    "@types/koa": "^2.13.4",
-    "@types/node": "14",
-    "@types/passport": "^1.0.7",
-    "@types/passport-jwt": "^3.0.6",
-    "@types/ws": "^8.5.2",
-    "cross-env": "^6.0.3",
-    "fs-extra": "^10.0.1",
-    "jest": "^26.4.0",
-    "mwts": "^1.0.5",
-    "ts-jest": "^26.2.0",
-    "typescript": "^4.0.0"
-  },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "scripts": {
-    "start": "NODE_ENV=production node ./bootstrap.js",
-    "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
-    "test": "midway-bin test --ts",
-    "cov": "midway-bin cov --ts",
-    "lint": "mwts check",
-    "lint:fix": "mwts fix",
-    "ci": "npm run cov",
-    "build": "bundle && midway-bin build -c",
-    "bundle": "ncc build bootstrap.js -o build",
-    "bundle_start": "cross-env NODE_ENV=production node ./build/index.js"
-  },
-  "midway-bin-clean": [
-    ".vscode/.tsbuildinfo",
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "anonymous",
-  "license": "MIT"
+  "name": "@imohuan-template/midway-ts",
+  "description": "midway模板：jtw, filter, middleware, socket",
+  "files": [
+    "template",
+    "package.json"
+  ]
 }

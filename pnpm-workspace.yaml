@@ -3,7 +3,7 @@ packages:
   - "packages/components"
 
   - "packages/cli/core"
-  - "packages/cli/templates"
+  - "packages/cli/templates/**"
   - "packages/cli/commands/**"
   - "packages/utils/**"
   - "!**/__test__/**"

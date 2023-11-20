@@ -1,22 +1,8 @@
 {
-  "name": "mini-koa",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "esno src/index.ts",
-    "dev": "nodemon --watch \"src/index.ts\" --exec \"esno src/index.ts\""
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.6",
-    "@types/node": "^17.0.42",
-    "axios": "^0.27.2",
-    "esno": "^0.16.3",
-    "koa-micro-ts": "^3.3.1",
-    "lodash-es": "^4.17.21",
-    "nodemon": "^2.0.16"
-  }
+  "name": "@imohuan-template/mini-koa",
+  "description": "koa的单文件模板，使用koa-micro-ts",
+  "files": [
+    "template",
+    "package.json"
+  ]
 }

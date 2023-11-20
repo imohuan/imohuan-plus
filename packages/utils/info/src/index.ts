@@ -85,7 +85,7 @@ export async function getSearchList(
 ): Promise<SearchItem[]> {
   const { startsWith } = option;
   return await got
-    .get(`https://www.npmjs.com/search?q=${encodeURIComponent(name)}&page=${page}&perPage=20`, {
+    .get(`https://www.npmjs.com/search?q=${encodeURIComponent(name)}&page=${page}&perPage=1000`, {
       headers: { "x-spiferack": "1" }
     })
     .json()

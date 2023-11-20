@@ -40,18 +40,18 @@ export class InitCommand extends Command {
       this.info = projectInfo;
       const pkgData = await this.downloadTemplate();
       const targetPath = await this.renderTemplate(pkgData);
-      await this.installTemplate(targetPath);
+      // await this.installTemplate(targetPath);
 
       // 安装(复制目录, Ejs渲染, 或则执行模板入口文件进行Ejs渲染)
       // 执行预处理（安装依赖和执行命令， 但是需要注意白名单（避免命令中存在恶意代码 npm/cnpm/yarn/pnpm, 但是避免执行类似npm run dev这样的代码，理由相同））
-    } catch (e) {
-      this.logger.verboseError(e);
+    } catch (e: any) {
+      this.logger.verboseError(e.message);
     }
   }
 
   /** 对目录进行检查，并且采取措施（强制清空当前目录） */
   private async prepare(): Promise<any> {
-    const rootPath = process.cwd();
+    const rootPath = resolve(process.cwd(), this.value);
     // 如果目录不为空则，提示是否删除目录
     if (!this.isDirEmpty(rootPath)) {
       /** 是否通过 */ let ifContinue = false;
@@ -136,9 +136,9 @@ export class InitCommand extends Command {
     });
     info.version = version;
 
-    // 搜索npm模板列表
+    // 搜索npm模板列表 imooc-cli-dev-template
     this.startSpinner({ title: "正在为您搜索可用的模板数据..." });
-    const list = await getSearchList("imooc-cli-dev-template", 1, { startsWith: true });
+    const list = await getSearchList("imohuan-plus-template", 1, { startsWith: true });
     await this.endSpinner();
     if (list.length === 0) throw new Error("为搜索到任何模板");
 
@@ -254,7 +254,7 @@ export class InitCommand extends Command {
   public async renderTemplate(option: { mainPath: string; templatePath: string; info: any }) {
     const { mainPath, templatePath, info } = option;
     if (!this.info) throw new Error("未找到参数");
-    const targetPath = resolve(this.option?.packagePath || process.cwd(), this.info.name);
+    const targetPath = resolve(process.cwd(), this.info.name);
     this.startSpinner({ title: "正在安装模板中..." });
     ensureDirSync(targetPath);
     ensureDirSync(templatePath);

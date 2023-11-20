@@ -1,0 +1,8 @@
+{
+  "scripts": {},
+  "devDependencies": {
+    "@imohuan-plus/init-command": "workspace:*",
+    "commander": "^10.0.0",
+    "execa": "^6.1.0"
+  }
+}
