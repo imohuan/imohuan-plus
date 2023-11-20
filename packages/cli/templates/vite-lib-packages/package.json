@@ -1,5 +1,9 @@
 {
   "name": "@imohuan-template/vite-lib-packages",
+  "version": "1.0.1",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "description": "vite的pnpm workspace的lib项目库",
   "files": [
     "template",

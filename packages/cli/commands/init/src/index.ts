@@ -39,7 +39,8 @@ export class InitCommand extends Command {
       );
       this.info = projectInfo;
       const pkgData = await this.downloadTemplate();
-      const targetPath = await this.renderTemplate(pkgData);
+      // const targetPath =
+      await this.renderTemplate(pkgData);
       // await this.installTemplate(targetPath);
 
       // 安装(复制目录, Ejs渲染, 或则执行模板入口文件进行Ejs渲染)
@@ -98,16 +99,18 @@ export class InitCommand extends Command {
     }
 
     // 选择创建项目还是组件
-    const { type } = await inquirer.prompt({
-      type: "list",
-      name: "type",
-      message: "请选择初始化类型",
-      default: TemplateType.PROJECT,
-      choices: [
-        { name: typeNames[TemplateType.PROJECT], value: TemplateType.PROJECT },
-        { name: typeNames[TemplateType.COMPONENT], value: TemplateType.COMPONENT }
-      ]
-    });
+    // const { type } = await inquirer.prompt({
+    //   type: "list",
+    //   name: "type",
+    //   message: "请选择初始化类型",
+    //   default: TemplateType.PROJECT,
+    //   choices: [
+    //     { name: typeNames[TemplateType.PROJECT], value: TemplateType.PROJECT },
+    //     { name: typeNames[TemplateType.COMPONENT], value: TemplateType.COMPONENT }
+    //   ]
+    // });
+
+    const type: any = TemplateType.PROJECT;
     info.type = type;
     this.logger.verbose("选择生成项目类型: ", typeNames[type], type);
 
@@ -138,7 +141,7 @@ export class InitCommand extends Command {
 
     // 搜索npm模板列表 imooc-cli-dev-template
     this.startSpinner({ title: "正在为您搜索可用的模板数据..." });
-    const list = await getSearchList("@imohuan-template", 1, { startsWith: true });
+    const list = await getSearchList("@imohuan-template", 0, { startsWith: true });
     await this.endSpinner();
     if (list.length === 0) throw new Error("为搜索到任何模板");
 

@@ -1,5 +1,21 @@
 # @imohuan-plus/cli
 
+## 1.0.4
+
+### Patch Changes
+
+- Template
+- Updated dependencies
+  - @imohuan-plus/npm-package@1.0.3
+
+## 1.0.2
+
+### Patch Changes
+
+- None
+- Updated dependencies
+  - @imohuan-plus/npm-package@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

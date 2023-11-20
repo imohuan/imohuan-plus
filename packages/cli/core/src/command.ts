@@ -30,6 +30,8 @@ export function registerCommand(label: string, version: string) {
     .option("-f, --force", "是否强制初始化项目")
     .action(exec);
 
+  // program.command("[ml] [projectName]").description("使用网络命令").action(exec);
+
   program.on("option:targetPath", function () {
     process.env.CLI_TARGET_PATH = program.getOptionValue("targetPath");
   });

@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/components",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "所有部件都在这里安顿下来",
   "main": "index.ts",
   "module": "index.ts",

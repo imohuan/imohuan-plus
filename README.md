@@ -9,3 +9,12 @@ pnpm changeset
 pnpm changeset version
 
 pnpm --filter @imohuan-plus/init-command publish --access public
+
+# 流程
+
+pnpm changeset
+pnpm changeset version
+pnpm -r build
+pnpm -r publish
+git add .
+git commit -m "xxxx"

@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/log",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "src/index.ts",
   "description": "日志打印",
   "scripts": {},

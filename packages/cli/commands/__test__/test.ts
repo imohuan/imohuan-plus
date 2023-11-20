@@ -3,6 +3,12 @@ import { resolve } from "path";
 
 async function run() {
   await execa("npx", ["tsup", "src/index.ts", "--format", "cjs", "--minify"], {
+    cwd: resolve(__dirname, "../../core"),
+    stderr: "inherit",
+    stdout: "inherit"
+  });
+
+  await execa("npx", ["tsup", "src/index.ts", "--format", "cjs", "--minify"], {
     cwd: resolve(__dirname, "../init"),
     stderr: "inherit",
     stdout: "inherit"
@@ -12,6 +18,7 @@ async function run() {
   const coreIndex = resolve(__dirname, "../../core/bin/index.js");
   const nodeModule = resolve(__dirname);
   execa("node", [coreIndex, "init", "test-name", "-d", "-tp", nodeModule], {
+    // execa("node", [coreIndex, "-h"], {
     cwd: resolve(__dirname, "test"),
     stdio: "inherit"
     // stderr: "inherit",

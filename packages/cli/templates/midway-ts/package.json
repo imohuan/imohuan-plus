@@ -1,5 +1,9 @@
 {
   "name": "@imohuan-template/midway-ts",
+  "version": "1.0.1",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "description": "midway模板：jtw, filter, middleware, socket",
   "files": [
     "template",

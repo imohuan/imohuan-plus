@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/npm-package",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "npm包安装",

@@ -5,6 +5,7 @@ import { logger } from "@imohuan-plus/log";
 import { NpmPackage } from "@imohuan-plus/npm-package";
 import { get } from "@imohuan-plus/utils-common";
 import { Command } from "commander";
+import { getNpmInfo } from "@imohuan-plus/info";
 
 /** 指令对应的npm包 */
 export const commandMap = {
@@ -25,12 +26,15 @@ export async function exec() {
 
     /** 指令名称 */
     const name = command.name();
-    const npmName = get(commandMap, name, null);
+    const npmName = get(commandMap, name, `@imohuan-plus/${name}-command`);
     const npmVersion = "latest";
     logger.verbose("指令", { name, npmName });
 
     const isTest = !!process.env?.CLI_TARGET_PATH;
     if (!npmName) throw new Error("未找到指令对应的库");
+
+    const info = await getNpmInfo(npmName);
+    if (!info?.name) throw new Error(`未找到 ${npmName} 库`);
 
     /** 安装的Root目录 */
     const target = process.env?.CLI_TARGET_PATH || resolve(homePath, "dependencies");

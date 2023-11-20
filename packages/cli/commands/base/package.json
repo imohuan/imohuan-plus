@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/base-command",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "src/index.ts",
   "description": "Command基础包",
   "devDependencies": {

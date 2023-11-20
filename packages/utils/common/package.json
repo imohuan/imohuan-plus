@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/utils-common",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "src/index.ts",
   "description": "项目基础功能模块",
   "dependencies": {},

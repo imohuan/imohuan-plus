@@ -80,7 +80,7 @@ export function getRegistryMap(
  */
 export async function getSearchList(
   name: string,
-  page: number = 1,
+  page: number = 0,
   option: { startsWith: boolean } = { startsWith: false }
 ): Promise<SearchItem[]> {
   const { startsWith } = option;

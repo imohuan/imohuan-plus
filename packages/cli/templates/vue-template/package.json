@@ -1,5 +1,9 @@
 {
   "name": "@imohuan-template/vue-template",
+  "version": "1.0.1",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "description": "自用最强vue模版，额安装东西太多了",
   "files": [
     "template",

@@ -1,5 +1,9 @@
 {
   "name": "@imohuan-template/serverless-ts",
+  "version": "1.0.1",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "description": "midway的Serverless版本",
   "files": [
     "template",

@@ -1,5 +1,17 @@
 # @imohuan-plus/base-command
 
+## 1.0.3
+
+### Patch Changes
+
+- Template
+
+## 1.0.2
+
+### Patch Changes
+
+- None
+
 ## 1.0.1
 
 ### Patch Changes

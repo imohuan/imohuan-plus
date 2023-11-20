@@ -1,5 +1,9 @@
 {
   "name": "@imohuan-template/vite-vue3-unocss",
+  "version": "1.0.1",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "description": "vite、vue3、unocss、pinia、vue-router、element-plus",
   "files": [
     "template",

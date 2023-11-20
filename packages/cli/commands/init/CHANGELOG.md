@@ -1,5 +1,17 @@
 # @imohuan-plus/init-command
 
+## 1.0.9
+
+### Patch Changes
+
+- Template
+
+## 1.0.7
+
+### Patch Changes
+
+- None
+
 ## 1.0.6
 
 ### Patch Changes

@@ -1,5 +1,9 @@
 {
   "name": "@imohuan-template/vite-lib",
+  "version": "1.0.1",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "description": "vite开发lib库",
   "files": [
     "template",
