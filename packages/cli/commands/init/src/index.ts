@@ -1,7 +1,5 @@
-import { Command } from "@imohuan-plus/base-command";
-import { SearchItem, getSearchList } from "@imohuan-plus/info";
-import { NpmPackage } from "@imohuan-plus/npm-package";
-import { defaultsDeep, kebabCase, loadJson, omit } from "@imohuan-plus/utils-common";
+import { renderFile } from "ejs";
+import { execa } from "execa";
 import {
   copySync,
   emptyDirSync,
@@ -10,15 +8,18 @@ import {
   readdirSync,
   writeFileSync
 } from "fs-extra";
+import { glob } from "glob";
 import inquirer from "inquirer";
-import { execa } from "execa";
+import { resolve } from "path";
 import { valid } from "semver";
+
+import { Command } from "@imohuan-plus/base-command";
+import { getSearchList, SearchItem } from "@imohuan-plus/info";
+import { NpmPackage } from "@imohuan-plus/npm-package";
+import { defaultsDeep, kebabCase, loadJson, omit } from "@imohuan-plus/utils-common";
 
 import { TemplateType, typeNames } from "./configs";
 import { SelectInfo, TemplateOption } from "./typing";
-import { resolve } from "path";
-import { glob } from "glob";
-import { renderFile } from "ejs";
 
 export class InitCommand extends Command {
   private info: SelectInfo | null = null;

@@ -7,6 +7,9 @@
   "homepage": "",
   "keywords": [],
   "license": "ISC",
+  "scripts": {
+    "build": "esno build.ts"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "moment": "^2.29.4",

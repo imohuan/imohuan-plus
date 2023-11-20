@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import { config } from "dotenv";
 import { existsSync } from "fs";
+import importLocal from "import-local";
 import minimist from "minimist";
 import { homedir } from "os";
 import { resolve } from "path";
@@ -13,6 +14,14 @@ import { logger } from "@imohuan-plus/log";
 import pkg from "../package.json";
 import { registerCommand } from "./command";
 import { DEFAULT_CLI_HOME, DEFAULT_ENV_NAME } from "./configs";
+
+export function run() {
+  if (importLocal(__filename)) {
+    logger.info("cli", "正在使用 imohuan-cli 本地版本");
+  } else {
+    core(process.argv.slice(2));
+  }
+}
 
 export async function core(argv: string[]) {
   try {

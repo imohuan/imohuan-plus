@@ -1,17 +1,28 @@
 {
   "name": "@imohuan-plus/cli",
+  "description": "imohuan的命令行",
   "version": "1.0.0",
   "main": "src/index.ts",
   "bin": {
-    "imohuan-cli": "bin/index.ts"
+    "imohuan-cli": "bin/index.js"
+  },
+  "scripts": {
+    "build": "esno build.ts"
   },
   "types": "src/global.d.ts",
-  "description": "",
   "author": "",
   "homepage": "",
   "keywords": [],
   "license": "ISC",
+  "files": [
+    "bin",
+    "dist",
+    "package.json"
+  ],
   "dependencies": {
+    "@imohuan-plus/npm-package": "workspace:*"
+  },
+  "devDependencies": {
     "chalk": "^4.1.2",
     "commander": "^10.0.0",
     "dotenv": "^16.0.3",
@@ -20,14 +31,11 @@
     "figlet": "^1.5.2",
     "import-local": "^3.1.0",
     "minimist": "^1.2.7",
-    "root-check": "^2.0.0",
+    "root-check": "^1.0.0",
     "semver": "^7.3.8",
     "@imohuan-plus/log": "workspace:*",
     "@imohuan-plus/info": "workspace:*",
     "@imohuan-plus/utils-common": "workspace:*",
-    "@imohuan-plus/npm-package": "workspace:*"
-  },
-  "devDependencies": {
     "@types/figlet": "^1.5.5",
     "@types/import-local": "^3.1.0",
     "@types/minimist": "^1.2.2",

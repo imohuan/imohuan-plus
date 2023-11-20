@@ -1,10 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "vitest",
-    "build": "vite build",
-    "changesets": "npx changesets",
-    "changesets:version": "npx changesets version"
+    "test": "vitest"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
@@ -15,7 +12,8 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vitest/ui": "^0.28.5",
-    "esbuild": "^0.15.18",
+    "dts-bundle-generator": "^8.1.2",
+    "esbuild": "^0.19.6",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-prettier": "^4.2.1",

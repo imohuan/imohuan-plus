@@ -1,5 +1,5 @@
 {
-  "name": "@imohuan-plus/server",
+  "name": "@imohuan/server",
   "private": true,
   "version": "1.0.0",
   "description": "Midway Serverless for the Serverless environment",

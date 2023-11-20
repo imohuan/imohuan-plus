@@ -1,6 +1,6 @@
 {
   "name": "@imohuan-plus/init-command",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "description": "Npm包安装",
   "author": "",
@@ -8,28 +8,32 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
-    "prepublishOnly": "esno scripts/build.ts --only-build",
-    "dev": "esno scripts/build.ts"
+    "dev": "esno scripts/build.ts",
+    "build": "esno build.ts"
   },
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "dependencies": {
-    "ejs": "^3.1.8",
-    "execa": "^6.1.0",
-    "fs-extra": "^11.1.0",
-    "glob": "^8.1.0",
-    "inquirer": "^9.1.4",
-    "npminstall": "^7.4.0",
-    "semver": "^7.3.8",
-    "@imohuan-plus/base-command": "workspace:*",
-    "@imohuan-plus/npm-package": "workspace:*",
-    "@imohuan-plus/utils-common": "workspace:*",
-    "@imohuan-plus/log": "workspace:*",
-    "@imohuan-plus/info": "workspace:*"
+    "npminstall": "^7.4.0"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.1",
     "@types/fs-extra": "^11.0.1",
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^9.0.3",
-    "@types/semver": "^7.3.13"
+    "@types/semver": "^7.3.13",
+    "ejs": "^3.1.8",
+    "execa": "^6.1.0",
+    "glob": "^8.1.0",
+    "semver": "^7.3.8",
+    "inquirer": "^9.1.4",
+    "fs-extra": "^11.1.0",
+    "@imohuan-plus/base-command": "workspace:*",
+    "@imohuan-plus/npm-package": "workspace:*",
+    "@imohuan-plus/utils-common": "workspace:*",
+    "@imohuan-plus/log": "workspace:*",
+    "@imohuan-plus/info": "workspace:*"
   }
 }
