@@ -138,7 +138,7 @@ export class InitCommand extends Command {
 
     // 搜索npm模板列表 imooc-cli-dev-template
     this.startSpinner({ title: "正在为您搜索可用的模板数据..." });
-    const list = await getSearchList("imohuan-plus-template", 1, { startsWith: true });
+    const list = await getSearchList("@imohuan-template", 1, { startsWith: true });
     await this.endSpinner();
     if (list.length === 0) throw new Error("为搜索到任何模板");
 
