@@ -1,3 +1,5 @@
 {
-  "commentTranslate.targetLanguage": "en"
+  "commentTranslate.targetLanguage": "en",
+  "unocss.root": "packages/play",
+  "commentTranslate.multiLineMerge": true
 }

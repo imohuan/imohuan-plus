@@ -1,6 +1,6 @@
 packages:
   - "packages/play"
-  - "packages/components"
+  - "packages/components/*"
 
   - "packages/cli/core"
   - "packages/cli/templates/*"

@@ -1,0 +1,84 @@
+$selection-color: rgb(95, 196, 226);
+$line-height: 25px;
+
+.ProseMirror {
+}
+
+.ProseMirror {
+  margin-top: 10px;
+  border: 1px solid gray;
+  outline: none;
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+
+  br.ProseMirror-trailingBreak {
+    display: none;
+  }
+
+  // 选中状态
+  p::selection {
+    background-color: $selection-color;
+  }
+  p span::selection {
+    background: none;
+  }
+
+  .ssml-selected {
+    background-color: $selection-color;
+    span {
+      // background: none !important;
+    }
+  }
+
+  // 文字基本样式
+  p {
+    padding: 0px;
+    margin: 0px;
+    height: $line-height;
+    line-height: $line-height;
+    vertical-align: middle;
+
+    b {
+      line-height: $line-height;
+    }
+  }
+
+  .tag {
+    font-weight: 700;
+    line-height: 16px;
+    font-size: 12px;
+    color: rgb(255 255 255 / 1);
+    padding: 2px 8px;
+    margin: 0 2px;
+    border-radius: 2px;
+  }
+
+  // 节点样式
+  .ssml-break {
+    display: inline-block;
+    span {
+      @extend .tag;
+    }
+  }
+
+  .ssml-voice {
+    line-height: inherit;
+    display: inline-block;
+    font-weight: 700;
+    padding: 0 10px;
+    color: #36a1ff;
+  }
+
+  .ssml-phoneme {
+    display: inline-block;
+    font-weight: inherit;
+    span > span:first-child {
+      border-bottom: 2px solid rgb(131, 165, 165);
+    }
+    span > span:last-child {
+      background-color: rgb(131, 165, 165);
+      @extend .tag;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+pnpm add prosemirror-commands prosemirror-example-setup prosemirror-keymap prosemirror-menu prosemirror-model prosemirror-schema-basic prosemirror-schema-list prosemirror-state prosemirror-transform prosemirror-view -S
+
+选用prosemirror的原因
+https://zhuanlan.zhihu.com/p/123341288
+1. 完善的生态体系
+2. 使用数据类型控制dom节点，保证dom的干净
+
+https://prosemirror.net/docs/guide/#intro

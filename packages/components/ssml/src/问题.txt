@@ -1,0 +1,42 @@
+支持SSML那些内容
+
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="string">
+    背景音乐
+    <mstts:backgroundaudio src="string" volume="string" fadein="string" fadeout="string"/>
+    角色
+    <voice name="string" effect="string">
+        音频
+        <audio src="string"></audio>
+        停顿
+        <break strength="string" time="string" />
+        说话语气
+        <mstts:express-as style="string" styledegree="value" role="string"></mstts:express-as>
+        静音
+        <mstts:silence type="string" value="string"/>
+        韵律
+        <prosody pitch="value" contour="value" range="value" rate="value" volume="value"></prosody>
+        自定义发音  
+        <phoneme alphabet="string" ph="string"></phoneme>
+        特殊术语 如日期，时间，电话  https://docs.microsoft.com/zh-cn/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#add-say-as-element 
+        <say-as interpret-as="string" format="string" detail="string"></say-as>
+        英文强调
+        <emphasis level="reduced|none|moderate|strong"> Hello </emphasis>
+
+        
+        书签
+        <bookmark mark="string"/>
+
+
+        语言
+        <lang xml:lang="string"></lang>
+        <lexicon uri="string"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML"></math>
+        <mstts:audioduration value="string"/>
+        <mstts:viseme type="string"/>
+        <p></p>
+        <s></s>
+        <sub alias="string"></sub>
+    </voice>
+</speak>
+
+

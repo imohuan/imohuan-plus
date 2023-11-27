@@ -5,8 +5,12 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module "vue" {
+declare module 'vue' {
   export interface GlobalComponents {
-    IInput: typeof import("@imohuan-plus/components")["IInput"];
+    IconSvg: typeof import('@imohuan-plus/components')['IconSvg']
+    IInput: typeof import('@imohuan-plus/components')['IInput']
+    ImColor: typeof import('@imohuan-plus/components')['ImColor']
+    ImList: typeof import('@imohuan-plus/components')['ImList']
+    IType: typeof import('@imohuan-plus/components')['IType']
   }
 }

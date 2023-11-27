@@ -1,0 +1,66 @@
+::selection {
+  @apply bg-tw-primary bg-opacity-50 text-white;
+}
+
+.voice {
+  .core-editor {
+    caret-color: var(--primary);
+    @apply w-800 h-500 outline-none font-mono font-bold text-lg border-2;
+    &:focus::selection {
+      @apply bg-tw-primary bg-opacity-50 text-white;
+    }
+  }
+
+  .text {
+    @apply text-blue-400 hover:text-blue-300 active:text-blue-500;
+    @apply border-blue-400 hover:border-blue-300 active:border-blue-500;
+    @apply text-xs border-b-2 mx-2px relative font-mono truncate;
+  }
+
+  .speed-left,
+  .speed-right {
+    @apply text-tw-primary;
+  }
+
+  .speed-text {
+    @apply text-xs;
+  }
+
+  .button {
+    @apply bg-tw-primary px-2 py-1 rounded text-white text-xs;
+  }
+}
+
+/** 内部编辑器的样式 */
+.ProseMirror-example-setup-style {
+  line-height: 16px;
+  @apply wh-full p2 outline-none;
+}
+
+/** 节点选中样式 */
+.ProseMirror-selectednode {
+  @apply bg-tw-primary bg-opacity-25;
+}
+
+.menubar {
+  grid-template-columns: repeat(auto-fill, 50px);
+  grid-template-columns: repeat(auto-fill, 50px);
+  @apply w-full grid gap-2 border-b-2;
+}
+
+.menubar-item {
+  @apply wh-full p-2 center flex-col border-2 border-t-0 border-l-0 border-b-transparent border-r-black;
+  @apply hover:bg-tw-primary active:bg-tw-primary hover:bg-opacity-40 active:bg-opacity-60;
+
+  img {
+    @apply block wh-30;
+  }
+
+  span {
+    @apply text-xs font-bold;
+  }
+
+  &.disable {
+    @apply text-gray-400;
+  }
+}
